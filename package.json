@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dist":"rimraf ./dist && tsup ./src",
+    "dist": "rimraf ./dist && tsup ./src",
     "start": "node dist/server.js",
     "start:dist": "rimraf ./dist && tsup ./src  && node dist/server.js",
-    "start:dev":"npx tsx ./src/server.ts",
+    "start:dev": "npx tsx --env-file=.env src/server.ts",
+    "start:watch": "npx tsx watch --env-file=.env src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,8 +15,13 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/express": "^5.0.0",
+    "chalk": "^5.3.0",
     "tsup": "^8.3.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
   }
 }
