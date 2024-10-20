@@ -1,0 +1,21 @@
+{
+  "name": "ts-dio-bank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dist":"rimraf ./dist && tsup ./src",
+    "start": "node dist/server.js",
+    "start:dist": "rimraf ./dist && tsup ./src  && node dist/server.js",
+    "start:dev":"npx tsx ./src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
